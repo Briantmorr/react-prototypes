@@ -1,8 +1,8 @@
-import React, { Component} from 'react';
-import contactData from './data/contacts';
+import React, { Component } from 'react';
 import ContactCard from './contact_card';
+import contactData from './data/contacts';
 
-class ContactList extends Component{
+class ContactList extends Component {
     constructor(props){
         super(props);
 
@@ -10,11 +10,21 @@ class ContactList extends Component{
             contacts: contactData
         }
     }
-    render(){
-        console.log(this.state.contacts);
-        return <h1>Contact List text</h1>
-    }
 
+    render(){
+        const list = this.state.contacts.map((item, index) => {
+
+            return <ContactCard key={index} contact={item}/>
+        });
+
+        return (
+            <div className="col-8">
+                <div className="row">
+                    {list}
+                </div>
+            </div>
+        )
+    }
 }
 
 export default ContactList;
