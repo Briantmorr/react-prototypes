@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default props => {
-    console.log(props);
     const {firstName, lastName, email, phone} = props.contact;
     return (
         <div className="col-6 my-3">
@@ -12,8 +11,8 @@ export default props => {
                 <div className="card-block">
                     <h4 className="card-title"> {firstName}</h4>
                     <div className="card-text">
-                        <p><b>Phone: {phone}</b></p>
-                        <p><b>Email: {email}</b></p>
+                        <p><b>Phone: </b>{phone}</p>
+                        <p><b>Email: </b>{email}</p>
                     </div>
                 </div>
             </div>
